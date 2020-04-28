@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>My Application</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
+<form action="POST">
+    <label for="add-movie">Add Movie: </label>
+    <input id="add-movie" type="text">
 
-    <div class="container">
-        <h1>Hello There!</h1>
-        <p>To get started, edit <code>src/index.js</code>.</p>
-    </div>
+    <label for="rating">Rating: </label>
+    <input id="rating" type="text">
 
-    <script src="./main.js"></script>
+    <button id="submit" type="submit">Submit</button>
+</form>
+<div id="loading" class="container">
+    <h1 class="empty">Loading!</h1>
+</div>
+
+<script src="./main.js"></script>
 </body>
 </html>
