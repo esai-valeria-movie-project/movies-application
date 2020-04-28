@@ -3,8 +3,18 @@ const $ = require('jquery');
 $(document).ready(function () {
     console.log("jquery");
     const {getMovies} = require('./api.js');
+    const {addMovies} = require('./api.js');
     const loading = $("#movies");
     const done = $(".empty");
+
+    const sumbitMovie = $("#submit");
+    const addMovieName = $("#add-movie");
+    const addMovieRating = $("#rating");
+
+    sumbitMovie.click(function () {
+        addMovies(addMovieName.val(), addMovieRating.val())
+    });
+
 
     getMovies().then((movies) => {
         console.log('Here are all the movies:');
@@ -17,6 +27,10 @@ $(document).ready(function () {
             console.log(result);
             loading.append(result);
             done.empty();
+
+
+
+
 
 
 

@@ -15,9 +15,11 @@ module.exports = {
       body: JSON.stringify(post),
     };
     fetch(url, options)
-        .then()
-        .catch();
-
+        .then(response => response.json())
+        .catch((error) => {
+      alert('wrong way')
+          console.log(error);
+        });
     console.log(addMovies)
   }
 };
