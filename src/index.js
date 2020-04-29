@@ -39,11 +39,25 @@ $(document).ready(function () {
         console.log('Here are all the movies:');
         movies.forEach(({title, rating, id}) => {
             console.log(`id#${id} - ${title} - rating: ${rating}`);
-            let result = "";
-            result += "<h5>Movie ID: " + id + "</h5>";
-            result += "<h3>Title: " + title + "</h3>";
-            result += "<h4>Rating: " + rating + "</h4>";
+            // let result = "";
+            // result += "<div class='container content'>";
+            // result += "<div class=\"card mb-3\">";
+            // result += "<img src=\"https://media.netflix.com/dist/img/meta-image-netflix-symbol-black.png\" class=\"card-img-top\" alt=\"Netflix\">";
+            // result += "<div class='card-body'>";
+            // result += "<h3 class='card-title'>Title: " + title + "</h3>";
+            // result += "<p class='card-text'>Rating: " + rating + "</p>";
+            // result += "<p class='card-text'>Movie ID: " + id + "</p>";
+            // result += "</div>";
+            // result += "</div>";
+            // result += "</div>";
             // result += "<button id='delete' type='submit'>Delete</button>";
+
+            let result = "";
+            result += "<div id=\"carouselExampleCaptions\" class=\"carousel slide\" data-ride=\"carousel\">";
+            result += "<div class=\"carousel-inner\">";
+            result += "<div class='carousel-item active'>";
+            result += "<img src=\"https://media.netflix.com/dist/img/meta-image-netflix-symbol-black.png\" class=\"card-img-top\" alt=\"Netflix\">";
+
             console.log(result);
             loading.append(result);
             done.empty();
