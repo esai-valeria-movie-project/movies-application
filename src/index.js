@@ -53,10 +53,56 @@ $(document).ready(function () {
             // result += "<button id='delete' type='submit'>Delete</button>";
 
             let result = "";
-            result += "<div id=\"carouselExampleCaptions\" class=\"carousel slide\" data-ride=\"carousel\">";
-            result += "<div class=\"carousel-inner\">";
-            result += "<div class='carousel-item active'>";
-            result += "<img src=\"https://media.netflix.com/dist/img/meta-image-netflix-symbol-black.png\" class=\"card-img-top\" alt=\"Netflix\">";
+            result +=
+
+                "<div id=\"carouselExampleCaptions\" class=\"carousel slide\" data-ride=\"carousel\">"+
+                // "<ol class=\"carousel-indicators\">"+
+                // "  <li data-target=\"#carouselExampleCaptions\" data-slide-to=\"0\" class=\"active\"></li>"+
+                // "   <li data-target=\"#carouselExampleCaptions\" data-slide-to=\"1\"></li>"+
+                // "<li data-target=\"#carouselExampleCaptions\" data-slide-to=\"2\"></li></ol>"+
+                "<div class=\"carousel-inner\">"+
+                "<div class='carousel-item active '>" +
+                "<img src=\"https://media.netflix.com/dist/img/meta-image-netflix-symbol-black.png\" class=\"card-img-top\" alt=\"Netflix\">" +
+                "<div class=\"carousel-caption d-none d-md-block\">" +
+                "<h3>Title: " + "hello" + "</h3>" +
+                "<p>Rating: " + "</p>" +
+                "<p>Movie ID: " + "</p>"+
+                "</div>" +
+                "</div>"+
+                "<div class=\"carousel-item active\">"+
+                "<img src=\"https://media.netflix.com/dist/img/meta-image-netflix-symbol-black.png\" class=\"card-img-top\" alt=\"Netflix\">" +
+                "<div class=\"carousel-caption d-none d-md-block\">"+
+                "<h3>Title: " + "Netflix" + "</h3>" +
+                "<p>Rating: " + "</p>" +
+                "<p>Movie ID: " +  "</p>"+
+                "</div>" +
+                "</div>"+
+                "<div class=\"carousel-item\">"+
+                "<img src=\"https://media.netflix.com/dist/img/meta-image-netflix-symbol-black.png\" class=\"card-img-top\" alt=\"Netflix\">" +
+                "<div class=\"carousel-caption d-none d-md-block\">"+
+                "<h3>Title: " + "</h3>" +
+                "<p>Rating: " + "</p>" +
+                "<p>Movie ID: " + "</p>"+
+                "</div>" +
+                "</div>"+
+                "</div>"+
+                "<a class=\"carousel-control-prev\" href=\"#carouselExampleCaptions\" role=\"button\" data-slide=\"prev\">" +
+                "<span class='carousel-control-prev-icon' aria-hidden='true'></span>" +
+                "<span class=\"sr-only\">Previous</span>"+
+                "</a>"+
+                " <a class=\"carousel-control-next\" href=\"#carouselExampleCaptions\" role=\"button\" data-slide=\"next\">"+
+                "<span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>"+
+                "<span class=\"sr-only\">Next</span>"+
+                "</a>"+
+                "</div>";
+
+
+
+
+
+
+
+
 
             console.log(result);
             loading.append(result);
