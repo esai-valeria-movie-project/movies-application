@@ -4,15 +4,25 @@ $(document).ready(function () {
     console.log("jquery");
     const {getMovies} = require('./api.js');
     const {addMovies} = require('./api.js');
+    const {editMovies} = require('./api.js');
     const loading = $("#movies");
     const done = $(".empty");
 
-    const sumbitMovie = $("#submit");
+    const submitMovie = $("#submit");
     const addMovieName = $("#add-movie");
     const addMovieRating = $("#rating");
 
-    sumbitMovie.click(function () {
-        addMovies(addMovieName.val(), addMovieRating.val())
+    submitMovie.click(function () {
+        addMovies(addMovieName.val(), addMovieRating.val());
+    });
+
+    const editMovie = $('#edit');
+    const editID = $('#id');
+    const editMovieName = $('#edit-movie');
+    const editRating = $('#edit-rating');
+
+    editMovie.click(function () {
+        editMovies(editMovieName.val(), editRating.val(), editID.val());
     });
 
 
@@ -27,11 +37,6 @@ $(document).ready(function () {
             console.log(result);
             loading.append(result);
             done.empty();
-
-
-
-
-
 
 
         });

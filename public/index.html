@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-<form action="POST">
+<form>
     <label for="add-movie">Add Movie: </label>
     <input id="add-movie" type="text">
 
@@ -14,6 +14,18 @@
     <input id="rating" type="text">
 
     <button id="submit" type="submit">Submit</button>
+</form>
+<form>
+    <label for="id">ID: </label>
+    <input id="id" type="text">
+
+    <label for="edit-movie">Edit Movie:</label>
+    <input id="edit-movie" type="text">
+
+    <label for="edit-rating">Edit Rating:</label>
+    <input id="edit-rating" type="text">
+
+    <button id="edit" type="submit">Submit</button>
 </form>
 <div id="loading" class="container">
     <div id="movies"></div>
