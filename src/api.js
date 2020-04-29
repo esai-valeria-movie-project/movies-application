@@ -6,7 +6,7 @@ module.exports = {
 
   addMovies: (title, rating, id) => {
     const post = {title: title, rating: rating, id: id};
-    const url = ("api/movies")
+    const url = ("api/movies");
     const options = {
       method: 'POST',
       headers: {
