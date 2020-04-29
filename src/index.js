@@ -5,6 +5,7 @@ $(document).ready(function () {
     const {getMovies} = require('./api.js');
     const {addMovies} = require('./api.js');
     const {editMovies} = require('./api.js');
+    const {deleteMovie} = require('./api.js');
     const loading = $("#movies");
     const done = $(".empty");
 
@@ -26,6 +27,14 @@ $(document).ready(function () {
     });
 
 
+    const deleteButton =$('#delete');
+    const deleteId =$('#delete-id');
+
+    deleteButton.click(function () {
+        deleteMovie(deleteId.val())
+    });
+
+
     getMovies().then((movies) => {
         console.log('Here are all the movies:');
         movies.forEach(({title, rating, id}) => {
@@ -34,6 +43,7 @@ $(document).ready(function () {
             result += "<h5>Movie ID: " + id + "</h5>";
             result += "<h3>Title: " + title + "</h3>";
             result += "<h4>Rating: " + rating + "</h4>";
+            // result += "<button id='delete' type='submit'>Delete</button>";
             console.log(result);
             loading.append(result);
             done.empty();
