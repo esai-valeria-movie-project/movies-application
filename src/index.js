@@ -6,7 +6,7 @@ $(document).ready(function () {
     const {addMovies} = require('./api.js');
     const {editMovies} = require('./api.js');
     const {deleteMovie} = require('./api.js');
-    const loading = $("#movies");
+    const loading = $(".carousel-inner");
     const done = $(".empty");
 
     const submitMovie = $("#submit");
@@ -39,75 +39,18 @@ $(document).ready(function () {
         console.log('Here are all the movies:');
         movies.forEach(({title, rating, id}) => {
             console.log(`id#${id} - ${title} - rating: ${rating}`);
-            // let result = "";
-            // result += "<div class='container content'>";
-            // result += "<div class=\"card mb-3\">";
-            // result += "<img src=\"https://media.netflix.com/dist/img/meta-image-netflix-symbol-black.png\" class=\"card-img-top\" alt=\"Netflix\">";
-            // result += "<div class='card-body'>";
-            // result += "<h3 class='card-title'>Title: " + title + "</h3>";
-            // result += "<p class='card-text'>Rating: " + rating + "</p>";
-            // result += "<p class='card-text'>Movie ID: " + id + "</p>";
-            // result += "</div>";
-            // result += "</div>";
-            // result += "</div>";
-            // result += "<button id='delete' type='submit'>Delete</button>";
 
-            let result = "";
-            result +=
-
-                "<div id=\"carouselExampleCaptions\" class=\"carousel slide\" data-ride=\"carousel\">"+
-                // "<ol class=\"carousel-indicators\">"+
-                // "  <li data-target=\"#carouselExampleCaptions\" data-slide-to=\"0\" class=\"active\"></li>"+
-                // "   <li data-target=\"#carouselExampleCaptions\" data-slide-to=\"1\"></li>"+
-                // "<li data-target=\"#carouselExampleCaptions\" data-slide-to=\"2\"></li></ol>"+
-                "<div class=\"carousel-inner\">"+
-                "<div class='carousel-item active '>" +
-                "<img src=\"https://media.netflix.com/dist/img/meta-image-netflix-symbol-black.png\" class=\"card-img-top\" alt=\"Netflix\">" +
-                "<div class=\"carousel-caption d-none d-md-block\">" +
-                "<h3>Title: " + "hello" + "</h3>" +
-                "<p>Rating: " + "</p>" +
-                "<p>Movie ID: " + "</p>"+
+            let result = "" +
+            "<div class=\"carousel-item\"><img src=\"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/movie-alt2-512.png\" class=\"d-block w-100\" alt=\"...\">"+
+                "<div class='carousel-caption d-none d-md-block'>" +
+                "<h5>Title: " + title + "</h5>" +
+                "<p> Rating: " + rating + "</p>" +
+                "<p>Movie id: " + id + "</p>"+
                 "</div>" +
-                "</div>"+
-                "<div class=\"carousel-item active\">"+
-                "<img src=\"https://media.netflix.com/dist/img/meta-image-netflix-symbol-black.png\" class=\"card-img-top\" alt=\"Netflix\">" +
-                "<div class=\"carousel-caption d-none d-md-block\">"+
-                "<h3>Title: " + "Netflix" + "</h3>" +
-                "<p>Rating: " + "</p>" +
-                "<p>Movie ID: " +  "</p>"+
-                "</div>" +
-                "</div>"+
-                "<div class=\"carousel-item\">"+
-                "<img src=\"https://media.netflix.com/dist/img/meta-image-netflix-symbol-black.png\" class=\"card-img-top\" alt=\"Netflix\">" +
-                "<div class=\"carousel-caption d-none d-md-block\">"+
-                "<h3>Title: " + "</h3>" +
-                "<p>Rating: " + "</p>" +
-                "<p>Movie ID: " + "</p>"+
-                "</div>" +
-                "</div>"+
-                "</div>"+
-                "<a class=\"carousel-control-prev\" href=\"#carouselExampleCaptions\" role=\"button\" data-slide=\"prev\">" +
-                "<span class='carousel-control-prev-icon' aria-hidden='true'></span>" +
-                "<span class=\"sr-only\">Previous</span>"+
-                "</a>"+
-                " <a class=\"carousel-control-next\" href=\"#carouselExampleCaptions\" role=\"button\" data-slide=\"next\">"+
-                "<span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>"+
-                "<span class=\"sr-only\">Next</span>"+
-                "</a>"+
                 "</div>";
-
-
-
-
-
-
-
-
-
             console.log(result);
             loading.append(result);
             done.empty();
-
 
         });
     }).catch((error) => {
