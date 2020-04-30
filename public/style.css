@@ -14,9 +14,17 @@ body {
 }
 
 .forms {
+    width: 30%;
+}
+
+.carousel {
+    width: 85%;
+}
+
+#loading {
     width: 50%;
 }
 
-.movies {
-    width: 50%;
+.btn {
+    background-color: #e50914;
 }
