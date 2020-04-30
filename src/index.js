@@ -39,18 +39,6 @@ $(document).ready(function () {
         console.log('Here are all the movies:');
         movies.forEach(({title, rating, id}) => {
             console.log(`id#${id} - ${title} - rating: ${rating}`);
-            // let result = "";
-            // result += "<div class='container content'>";
-            // result += "<div class=\"card mb-3\">";
-            // result += "<img src=\"https://media.netflix.com/dist/img/meta-image-netflix-symbol-black.png\" class=\"card-img-top\" alt=\"Netflix\">";
-            // result += "<div class='card-body'>";
-            // result += "<h3 class='card-title'>Title: " + title + "</h3>";
-            // result += "<p class='card-text'>Rating: " + rating + "</p>";
-            // result += "<p class='card-text'>Movie ID: " + id + "</p>";
-            // result += "</div>";
-            // result += "</div>";
-            // result += "</div>";
-            // result += "<button id='delete' type='submit'>Delete</button>";
 
             let result = "" +
             "<div class=\"carousel-item\"><img src=\"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/movie-alt2-512.png\" class=\"d-block w-100\" alt=\"...\">"+
@@ -63,7 +51,6 @@ $(document).ready(function () {
             console.log(result);
             loading.append(result);
             done.empty();
-
 
         });
     }).catch((error) => {
