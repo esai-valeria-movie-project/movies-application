@@ -19,8 +19,8 @@ module.exports = {
             .catch()
     },
 
-    editMovies: (title, rating, id) => {
-        const edit = {title: title, rating: rating};
+    editMovies: (title, rating, genre, id) => {
+        const edit = {title: title, rating: rating, genre: genre};
         const url = (`api/movies/` + id);
         const options = {
             method: 'PUT',
