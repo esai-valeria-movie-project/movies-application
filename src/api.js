@@ -4,8 +4,8 @@ module.exports = {
             .then(response => response.json());
     },
 
-    addMovies: (title, rating, id) => {
-        const post = {title: title, rating: rating, id: id};
+    addMovies: (title, rating, genre, id) => {
+        const post = {title: title, rating: rating, genre: genre, id: id};
         const url = ("api/movies");
         const options = {
             method: 'POST',

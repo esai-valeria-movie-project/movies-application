@@ -12,9 +12,10 @@ $(document).ready(function () {
     const submitMovie = $("#submit");
     const addMovieName = $("#add-movie");
     const addMovieRating = $("#rating");
+    const addMovieGenre =$('#add-genre');
 
     submitMovie.click(function () {
-        addMovies(addMovieName.val(), addMovieRating.val());
+        addMovies(addMovieName.val(), addMovieRating.val(), addMovieGenre.val());
     });
 
     const editMovie = $('#edit');
