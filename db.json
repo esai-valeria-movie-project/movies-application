@@ -3,11 +3,13 @@
     {
       "title": "Lord of the Rings",
       "rating": "5",
-      "id": 4
+      "id": 4,
+      "genre": "fantasy-epic"
     },
     {
       "title": "Thor",
       "rating": "10",
+      "genre": "Action",
       "id": 5
     },
     {
