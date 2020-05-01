@@ -1,7 +1,6 @@
 const $ = require('jquery');
 
 $(document).ready(function () {
-    console.log("jquery");
     const {getMovies} = require('./api.js');
     const {addMovies} = require('./api.js');
     const {editMovies} = require('./api.js');
@@ -12,7 +11,7 @@ $(document).ready(function () {
     const submitMovie = $("#submit");
     const addMovieName = $("#add-movie");
     const addMovieRating = $("#rating");
-    const addMovieGenre =$('#add-genre');
+    const addMovieGenre = $('#add-genre');
 
     submitMovie.click(function () {
         addMovies(addMovieName.val(), addMovieRating.val(), addMovieGenre.val());
@@ -25,33 +24,36 @@ $(document).ready(function () {
     const editRating = $('#edit-rating');
 
     editMovie.click(function () {
-        editMovies(editMovieName.val(), editRating.val(),  editGenre.val(), editID.val());
+        editMovies(editMovieName.val(), editRating.val(), editGenre.val(), editID.val());
     });
 
 
-    const deleteButton =$('#delete');
-    const deleteId =$('#delete-id');
+    const deleteButton = $('#delete');
+    const deleteId = $('#delete-id');
 
     deleteButton.click(function () {
-        deleteMovie(deleteId.val())
+        deleteMovie(deleteId.val());
     });
+
+
 
 
     getMovies().then((movies) => {
-        console.log('Here are all the movies:');
         movies.forEach(({title, rating, id, genre}) => {
-            console.log(`id#${id} - ${title} - rating: ${rating} - genre: ${genre}`);
-
+            const deleteBtn2 = $(`#delete-btn-${id}`);
+            deleteBtn2.click(function() {
+                deleteMovie($(this).data('id').val());
+            });
             let result = "" +
-            "<div class=\"carousel-item\"><img src=\"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/movie-alt2-512.png\" class=\"d-block w-100\" alt=\"...\">"+
+                "<div class=\"carousel-item\"><img src=\"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/movie-alt2-512.png\" class=\"d-block w-100\" alt=\"...\">" +
                 "<div class='carousel-caption d-none d-md-block'>" +
                 "<h5>Title: " + title + "</h5>" +
-                "<h4>Genre: " + genre + "</h4>"+
+                "<h4>Genre: " + genre + "</h4>" +
                 "<p> Rating: " + rating + "</p>" +
-                "<p>Movie id: " + id + "</p>"+
+                "<p>Movie id: " + id + "</p>" +
+                `<button id='delete-btn-${id}' data-id='${id}' type='submit'>Delete</button>` +
                 "</div>" +
                 "</div>";
-            console.log(result);
             loading.append(result);
             done.empty();
 
